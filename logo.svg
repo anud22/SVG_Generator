@@ -1,1 +1,1 @@
-<svg height="200" width="300"><circle cx="150" cy="100" r="100" style="fill:green"/> <text x="150" y="100" text-anchor="middle" alignment-baseline="middle" fill="red" font-size="90">ret</text> </svg>
+<svg height="200" width="300"><polygon points="0,200 150,0 300,200" style="fill:"/> <text x="150" y="133.33333333333331" text-anchor="middle" alignment-baseline="middle" fill="red" font-size="75">ERT</text> </svg>

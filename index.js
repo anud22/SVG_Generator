@@ -5,19 +5,22 @@ const generateSvg = require('./lib/generateSvg.js');
 
 function init() {
     inquirer.prompt(questions).then((data) => {
-        writeToFile('logo.svg', data);
-    });
+        const svgString = generateSvg(data);
+        createFile('logo.svg', svgString);
+        createFile('index.html', `<html> <body> ${svgString} </body> </html>`);
+    })
 }
 
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, generateSvg(data), (error) => {
+function createFile(fileName, data) {
+    fs.writeFile(fileName, data, (error) => {
         if (error) {
             console.error(error);
             return;
         }
-        console.log("Generated logo.svg");
+        console.log(`Generated ${fileName}`);
     });
 }
+
 
 init();
 
