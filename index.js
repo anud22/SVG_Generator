@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateSvg = require('./lib/generateSvg.js');
 
+//Invoked when project is run
 function init() {
     inquirer.prompt(questions).then((data) => {
         const svgString = generateSvg(data);
@@ -11,6 +12,7 @@ function init() {
     })
 }
 
+//Creates file
 function createFile(fileName, data) {
     fs.writeFile(fileName, data, (error) => {
         if (error) {
